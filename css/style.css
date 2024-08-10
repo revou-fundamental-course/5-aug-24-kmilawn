@@ -1,18 +1,20 @@
 .main-title {
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 0;
 }
 
 main {
     display: flex;
 }
 
-from {
+form {
     padding: 12px;
-    background-color: rgb(125, 125, 29);
+    background-color: rgb(208, 219, 221);
 }
 
 aside {
-    padding: 48px;
+    padding: 20px;
 }
 
 .button {
@@ -26,25 +28,45 @@ aside {
     margin-bottom: 16px;
 }
 
-.bg-burlywood {
-    background-color: burlywood;
+.bg-hitung {
+    background-color: rgb(217, 215, 244);
 }
 
 .bg-reset {
-    background-color: red;
-    color: white;
+    background-color: rgb(240, 234, 234);
+    color: black;
 }
 
 input[type=number] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     font-family: monospace;
     font-size: 14px;
+}
+
+h3 {
+    margin-bottom: 3px;
+}
+
+p {
+    text-align: justify;
+    font-family: math;
+}
+
+.dss-cnslt {
+    background-color: rgb(208, 219, 221);
+    padding: 10px;
+}
+
+.bttn {
+    height: 20px;
+    border: 1px solid;
+    border-radius: 3px;
 }
 
 footer {
