@@ -1,13 +1,9 @@
-//Ini java script
-
-console.log('linked success');
-
 function formValidate() {
     let genderMale = document.getElementById('laki-laki').checked;
     let genderFemale = document.getElementById('perempuan').checked;
-    let inputWeight = document.getElementById('weight').value;
-    let inputAge = document.getElementById('age').value;
-    let inputHeight = document.getElementById('height').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    let age = parseInt(document.getElementById('age').value);
+    let height = parseFloat(document.getElementById('height').value) / 100;
 
     if ((genderMale || genderFemale) && age > 0 && weight > 0 && height > 0 ){
         let bmi = weight / (height * height);
@@ -31,7 +27,7 @@ function formValidate() {
 
         document.getElementById('result-bmi').textContent = resultBMI;
         document.getElementById('category').textContent = kategoriBMI;
-        document.getElementById('desc').textContent = desc;
+        document.getElementById('explanation').textContent = desc;
         document.getElementById('result').textContent = 'block';
     } else {
         alert("Mohon untuk melengkapi semua data");
@@ -43,7 +39,7 @@ function resetForm() {
     document.getElementById ('result').style.display = 'none';
     document.getElementById('result-bmi').textContent = '';
     document.getElementById('category').textContent = '';
-    document.getElementById('explanation')..textContent = '';
+    document.getElementById('explanation').textContent = '';
 
 }
 
