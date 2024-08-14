@@ -72,3 +72,9 @@ p {
 footer {
     text-align: center;
 }
+
+@media only screen and (max-width: 480px) {
+    main {
+        flex-direction: column;
+    }
+}
