@@ -3,22 +3,47 @@
 console.log('linked success');
 
 function formValidate() {
-    let inputWeight = document.getElementById('input-weight').value;
-    let inputAge = document.getElementById('input-age').value;
-    let inputHeight = document.getElementById('input-height').value;
-    console.log(isi inputan berat badan: ${inputWeight});
-    console.log(isi inputan tinggi badan: ${inputHeight});
-    console.log(isi inputan usia: ${inputAge});
+    let genderMale = document.getElementById('laki-laki').checked;
+    let genderFemale = document.getElementById('perempuan').checked;
+    let inputWeight = document.getElementById('weight').value;
+    let inputAge = document.getElementById('age').value;
+    let inputHeight = document.getElementById('height').value;
 
-    (inputWeight == '' || inputHeight == '')
-        ? alert('Inputan Berat Badan Kosong!');
-        : result(inputHeight, inputWeight);
+    if ((genderMale || genderFemale) && age > 0 && weight > 0 && height > 0 ){
+        let bmi = weight / (height * height);
+        let resultBMI = bmi.toFixed(1);
 
-    console.log('form submitted');
+        let kategoriBMI, saran;
+
+        if (bmi < 18.5) {
+            kategoriBMI = "Kekurangan Berat Badan";
+            desc = "BMI Anda kurang dari 18.5. Anda berada dalam kategori kekurangan berat badan."
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+            kategoriBMI = "Normal (ideal)";
+            desc = "BMI Anda antara 18.5 - 24.9. Berat badan Anda berada dalam kategori normal."
+        } else if (bmi >= 25.0 && bmi <= 29.9){
+            kategoriBMI = "Kelebihan Berat Badan";
+            desc = "BMIAnda antara 25.0 - 29.9. Berat badan Anda berada dalam kategori kelebihan berat badan."
+        } else {
+            kategoriBMI = "Kegemukan (obesitas)";
+            desc = "BMI Anda di atas 30.0. Berat badan Anda berada dalam kategori kegemukan."
+        }
+
+        document.getElementById('result-bmi').textContent = resultBMI;
+        document.getElementById('category').textContent = kategoriBMI;
+        document.getElementById('desc').textContent = desc;
+        document.getElementById('result').textContent = 'block';
+    } else {
+        alert("Mohon untuk melengkapi semua data");
+    }
 }
 
-function result(inputHeight, inputWeight) {
-        let convertCmToM = inputHeight * 100;
-        let resultHeight = Math.pow(convertCmToM, 2);
-        console.log(inputWeight / resultHeight);
+function resetForm() {
+    document.getElementById('bmi-form').reset();
+    document.getElementById ('result').style.display = 'none';
+    document.getElementById('result-bmi').textContent = '';
+    document.getElementById('category').textContent = '';
+    document.getElementById('explanation')..textContent = '';
+
 }
+

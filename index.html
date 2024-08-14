@@ -17,7 +17,7 @@
             <p>The ideal weight is everyone's dream. Not only does having a body shape that supports appearance, an ideal weight also indicates a healthy body condition. What about you? Come on, calculate now on the BMI calculator.</p>
         </article>
 
-        <form>
+        <form id="bmi-form">
             <div>
                 <h3>Gender</h3>
                 <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki"><label for="laki-laki">Male</label>
@@ -25,23 +25,23 @@
             </div>
 
             <div>
-                <h3>Weight</h3>
-                <input type="number" id="input-weight">
+                <h3>Weight (kg)</h3>
+                <input type="number" id="weight">
             </div>
 
             <div>
                 <h3>Age</h3>
-                <input type= "number" id="input-age">
+                <input type= "number" id="age">
             </div>
 
             <div>
-                <h3>Height</h3>
-                <input type="number" id="input-height">
+                <h3>Height (cm)</h3>
+                <input type="number" id=" height">
             </div>
 
             <div class="form-btn-container">
                 <button class="button bg-hitung"  type="button" onclick="formValidate()">Calculate</button>
-                <button class="button bg-reset">Reset</button>
+                <button class="button bg-reset" type="button" onclick="resetForm()">Reset</button>
             </div>
         </form>
 
@@ -56,15 +56,28 @@
                 <li>Prepare for a weight loss program</li>
             </ol>
 
-            <p>This calculator should only be used by adults (pregnant or breastfeeding women should not rely on these BMI readings) and no action should be taken based on the value other than consulting a qualified person such as a doctor.</p>
+            <ol>
+                <li>BMI Normal berada pada kisaran 17-25</li>
+                <li>Jika angka BMI melebihi 25 , maka kamu memiliki berat bada berlebih</li>
+                <li>Jika angka BMI berada dibawah 17, maka kamu memiliki berat badan rendah</li>
+                <li>Jika angka BMI sudah melebihi angka 27, sebaiknya segera dilakukan penanganan untuk</li>
+            </ol>
 
+            <p>This calculator should only be used by adults (pregnant or breastfeeding women should not rely on these BMI readings) and no action should be taken based on the value other than consulting a qualified person such as a doctor.</p>
             <p>The calculator will give you an idea of how your weight compares to the general value. Body Mass Index (or BMI) is calculated as your weight (in kilograms) divided by the square of your height (in meters) or BMI = Kg/M2</p>
         </article>
         </aside>
 
         <aside>
             <section>
-                <h2>Result</h2>
+                <div id="result" style="display: none;">
+                    <h2>Result</h2>
+                    <p id="result-bmi"></p>
+                    <p>Anda dalam kategori</p>
+                    <p id="category"></p>
+                    <h2>The explanation is</h2>
+                    <p id="explanation"></p>
+                </div>
 
                 <p>BMI does not fully represent a comprehensive diagnosis of a person's health and disease risk. You need further consultation regarding your risks and concerns related to your weight.</p>
 
@@ -83,7 +96,6 @@
                         <button class="bttn">Register Online Now</button>
                     </div>
                 </div>
-
             </section>
         </aside>
     </main>
