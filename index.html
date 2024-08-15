@@ -9,92 +9,109 @@
 <body>
     <header>
         <h1 class="main-title">BMI Calculator</h1>
+        <h3 class="bmi">(Body Mass Index)</h3>
     </header>
 
     <main>
-        <aside>
+        <aside class="main-content">
         <article>
             <p>The ideal weight is everyone's dream. Not only does having a body shape that supports appearance, an ideal weight also indicates a healthy body condition. What about you? Come on, calculate now on the BMI calculator.</p>
         </article>
 
+        <section>
         <form id="bmi-form">
             <div>
                 <h3>Gender</h3>
-                    <label>
-                        <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki"><label for="laki-laki">Male</label>
-                        <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan"><label for="perempuan">Female</label>
-                    </label>
+                <div>
+                    <div class="input-jk"></div>
+                    <input type="radio" name="radio" id="selection-man" /><labelfor="selection-man">Male</label>
+                    <input type="radio" name="radio" id="selection-woman" /><labelfor="selection-woman">Female</label>
+                </div>
             </div>
 
             <div>
-                <label for="weight"><h3>Weight (Kg)</h3></label>
-                <input type="number" id="weight">
+                <label for="input-berat-badan"><h3>Weight (Kg)</h3></label>
+                <input type="number" id="input-berat-badan" required />
             </div>
-
+  
             <div>
-                <label for="age"><h3>Age</h3></label>
-                <input type= "number" id="age">
-            </div>
-
+                <label for="input-usia"><h3>Age</h3></label>
+                <input type="number" id="input-usia" autocomplete="off" required />
+              </div>
+  
             <div>
-                <label for="height"><h3>Height (Cm)</h3></label>
-                <input type="number" id="height">
+                <label for="input-tinggi-badan"><h3>Height (Cm)</h3></label>
+                <input type="number" id="input-tinggi-badan" required />
             </div>
-
-                <button class="button bg-hitung" id="submit" type="submit" onclick="formValidate()">Calculate</button>
-                <button class="button bg-reset" type="reset" onclick="resetForm()">Reset</button>
+  
+            <button class="button btn-hitung" id="submit" type="submit" onclick="calculate()">Calculate</button>
+          <button class="button btn-reset" type="reset" onclick="resetForm()">Reset</button>
         </form>
+        </section>
+
 
         <article>
             <header>
                 <h2>Form Information</h2>
             </header>
 
-            <ol type="1">
+            <!-- <ol type="1">
                 <li>Counting weight</li>
                 <li>Determine the ideal weight category or not</li>
                 <li>Prepare for a weight loss program</li>
-            </ol>
+            </ol> -->
 
+            <p>
+                1. Counting weight <br />
+                2. Determine the ideal weight category or not <br />
+                3. Prepare for a weight loss program <br />
+            </p>
             <p>This calculator should only be used by adults (pregnant or breastfeeding women should not rely on these BMI readings) and no action should be taken based on the value other than consulting a qualified person such as a doctor.</p>
-            <p>The calculator will give you an idea of how your weight compares to the general value. Body Mass Index (or BMI) is calculated as your weight (in kilograms) divided by the square of your height (in meters) or BMI = Kg/M2</p>
+            <p>The calculator will give you an idea of how your weight compares to the general value. Body Mass Index (or BMI) is calculated as your weight (in kilograms) divided by the square of your height (in meters) or BMI = Kg/ms<sup>2</sup>.</p>
         </article>
         </aside>
 
-        <aside>
+        <aside class="right-conten">
             <section>
-                <div id="result" style="display: none;">
-                    <h2>Result</h2>
-                    <p id="result-bmi"></p>
-                    <p>You are in the category</p>
-                    <p id="category"></p>
-                    <h2>The explanation is</h2>
-                    <p id="explanation"></p>
-                </div>
-
+                <header>
+                    <h1>Result</h1>
+                </header>
+        
+                <section class="result-bmi">
+                    <p class="result">Your result is :</p>
+                    <h2 id="result"></h2>
+                    <p class="category" id="category"></p>
+                    <p class="explanation" id="explanation"></p>
+                </section>
+        
                 <p>BMI does not fully represent a comprehensive diagnosis of a person's health and disease risk. You need further consultation regarding your risks and concerns related to your weight.</p>
 
+                <section></section>
                 <div class="dss-cnslt">
-                    <h3>Some diseases that originate from obesity</h3>
+                    <p class="some-dss">Some diseases that originate from obesity</p>
 
-                    <ul>
-                        <li>Diabetes</li>
-                        <li>Hypertension</li>
-                        <li>Heart Disease</li>
-                        <li>Osteoarthritis</li>
-                    </ul>
+                    <p class="dss">
+                        Diabetes<br />
+                        Hypertension<br />
+                        Heart Disease<br />
+                        Osteoarthritis<br />
+                    </p>
 
-                    <div>
-                        <button class="bttn">Consultation Via Application</button>
-                        <button class="bttn">Register Online Now</button>
-                    </div>
+                    <button class="bttn" id="consul" type="button"><a href="https://www.halodoc.com/tanya-dokter">Consultation Via Application</a></button>
+                    <button class="bttn" id="regist" type="button"><a href="https://www.halodoc.com">Register Online Now</a></button>
+                </section>
+
+                    <section class="download">
+                        <p class="app">Download the app</p>
+                        <img src="images/playstore.png" alt="play store" />
+                    </section>
                 </div>
             </section>
         </aside>
     </main>
 
     <footer>
-        <p>Made by Mila</p>
+        <p class="footer">&copy kmilawn/projectrevoU/BMIcalculator 2024 </p>
     </footer>
 
     <script src="js\script.js"></script>

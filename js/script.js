@@ -1,34 +1,44 @@
-document.getElementById("submit").addEventListener("click", formValidate);
+document.getElementById("submit").addEventListener("click", calculate);
 
-function formValidate(e) {
-  let genderMale = document.getElementById("laki-laki").value;
-  let genderFemale = document.getElementById("perempuan").value;
-  let weight = document.getElementById("weight").value;
-  let age = document.getElementById("age").value;
-  let height = document.getElementById("height").value / 100;
+function calculate(e) {
+  var man = document.getElementById("selection-man").value;
+  var woman = document.getElementById("selection-woman").value;
+  var bb = document.getElementById("input-berat-badan").value;
+  var age = document.getElementById("input-usia").value;
+  var tb = document.getElementById("input-tinggi-badan").value;
+  
+  var bmi = bb / (((tb / 100) * tb) / 100);
+  var result = bmi.toFixed(2);
+  document.getElementById("result").innerHTML = result;
 
-  let bmi = weight / (height * height);
-  let resultBMI = bmi.toFixed(1);
-  document.getElementById("result-bmi").innerHTML = resultBMI;
-
-  if ((genderMale || genderFemale) && age > 0 && weight > 0 && height > 0) {
+  if (bb >= 1 && tb >= 1) {
     e.preventDefault();
-    if (bmi < 18.5) {
-        document.getElementById("category").innerHTML = "Kekurangan Berat Badan";
-        document.getElementById("explanation").innerHTML = "BMI Anda kurang dari 18.5. Anda berada dalam kategori kekurangan berat badan.";
-    } else if (bmi >= 18.5 && bmi <= 24.9){
-        document.getElementById("category").innerHTML = "Normal (ideal)";
-        document.getElementById("explanation").innerHTML = "BMI Anda antara 18.5 - 24.9. Berat badan Anda berada dalam kategori normal.";
+    if (bmi <= 18.5) {
+      document.getElementById("category").innerHTML =
+        "Underweight";
+      document.getElementById("explanation").innerHTML =
+        "Your BMI is less than 18.5. You are in the underweight category. The best way to gain weight is to make sure the food you consume is rich in nutrients. Focus on foods that contain carbohydrates, protein, and healthy fats."
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+      document.getElementById("category").innerHTML = 
+      "Normal (Ideal)";
+      document.getElementById("explanation").innerHTML =
+      "Your BMI is between 18.5 – 24.9. You are in the normal or ideal category."
     } else if (bmi >= 25.0 && bmi <= 29.9) {
-        document.getElementById("category").innerHTML = "Kelebihan Berat Badan";
-        document.getElementById("explanation").innerHTML =  "BMI Anda antara 25.0 - 29.9. Berat badan Anda berada dalam kategori kelebihan berat badan.";
+      document.getElementById("category").innerHTML =
+        "Overweight";
+      document.getElementById("explanation").innerHTML =
+        "Your BMI is between 25.0 – 29.9. You are in the overweight or overweight category. The best way to lose weight is to regulate the calories of food consumed and exercise. If your BMI falls within this category then you are recommended to lose weight to normal limits."
     } else {
-        document.getElementById("category").innerHTML = "Kegemukan (obesitas)";
-        document.getElementById("explanation").innerHTML = "BMI Anda di atas 30.0. Berat badan Anda berada dalam kategori kegemukan.";
-    }
-  } else {
-        document.getElementById("resultBMI").innerHTML = "";
-        document.getElementById("category").innerHTML = "";
-        document.getElementById("explanation").innerHTML = "";
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("comment").innerHTML = "";
+      document.getElementById("category").innerHTML = "";
+    } 
   }
+}
+
+function resetForm() {
+  document.getElementById("bmi-form").reset();
+  document.getElementById ("result").textContent= '';
+  document.getElementById("category").textContent= '';
+  document.getElementById("explanation").textContent= '';
 }

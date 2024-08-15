@@ -1,6 +1,6 @@
 .main-title {
     text-align: left;
-    margin-left: 20px;
+    margin-left: px;
     margin-bottom: 0;
 }
 
@@ -18,8 +18,32 @@ form {
     border-radius: 4px;
 }
 
-aside {
-    padding: 20px;
+.main-content {
+    padding-right: 50px;
+}
+
+.bmi {
+    margin-top: 0;
+}
+
+.result-bmi {
+    background-color:rgb(208, 219, 221);
+    border-radius: 4px;
+    padding-bottom: 20px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.result {
+    text-align: center;
+}
+
+.category {
+    text-align: center;
+}
+
+.explanation {
+    text-align: center;
 }
 
 .button {
@@ -28,18 +52,13 @@ aside {
     border-radius: 4px;
 }
 
-.form-btn-container {
-    margin-top: 24px;
-    margin-bottom: 16px;
-}
-
-.bg-hitung {
+.btn-hitung {
     background-color: rgb(217, 215, 244);
     margin-top: 24px;
     margin-bottom: 16px;
 }
 
-.bg-reset {
+.btn-reset {
     background-color: rgb(240, 234, 234);
     color: black;
     margin-top: 24px;
@@ -71,6 +90,15 @@ p {
     background-color: rgb(208, 219, 221);
     padding: 10px;
     border-radius: 4px;
+    text-align: center;
+}
+
+.some-dss {
+    text-align: center;
+}
+
+.dss {
+    text-align: center;
 }
 
 .bttn {
@@ -79,7 +107,18 @@ p {
     border-radius: 3px;
 }
 
-footer {
+img {
+    width: 40%;
+    padding-left: 150px;
+}
+
+.app {
+    text-align: center;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+
+.footer {
     text-align: center;
 }
 
