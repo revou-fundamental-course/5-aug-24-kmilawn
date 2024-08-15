@@ -35,11 +35,15 @@ aside {
 
 .bg-hitung {
     background-color: rgb(217, 215, 244);
+    margin-top: 24px;
+    margin-bottom: 16px;
 }
 
 .bg-reset {
     background-color: rgb(240, 234, 234);
     color: black;
+    margin-top: 24px;
+    margin-bottom: 16px;
 }
 
 input[type=number] {

@@ -1,45 +1,34 @@
-function formValidate() {
-    let genderMale = document.getElementById('laki-laki').checked;
-    let genderFemale = document.getElementById('perempuan').checked;
-    let weight = parseFloat(document.getElementById('weight').value);
-    let age = parseInt(document.getElementById('age').value);
-    let height = parseFloat(document.getElementById('height').value) / 100;
+document.getElementById("submit").addEventListener("click", formValidate);
 
-    if ((genderMale || genderFemale) && age > 0 && weight > 0 && height > 0 ){
-        let bmi = weight / (height * height);
-        let resultBMI = bmi.toFixed(1);
+function formValidate(e) {
+  let genderMale = document.getElementById("laki-laki").value;
+  let genderFemale = document.getElementById("perempuan").value;
+  let weight = document.getElementById("weight").value;
+  let age = document.getElementById("age").value;
+  let height = document.getElementById("height").value / 100;
 
-        let kategoriBMI, saran;
+  let bmi = weight / (height * height);
+  let resultBMI = bmi.toFixed(1);
+  document.getElementById("result-bmi").innerHTML = resultBMI;
 
-        if (bmi < 18.5) {
-            kategoriBMI = "Kekurangan Berat Badan";
-            desc = "BMI Anda kurang dari 18.5. Anda berada dalam kategori kekurangan berat badan."
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
-            kategoriBMI = "Normal (ideal)";
-            desc = "BMI Anda antara 18.5 - 24.9. Berat badan Anda berada dalam kategori normal."
-        } else if (bmi >= 25.0 && bmi <= 29.9){
-            kategoriBMI = "Kelebihan Berat Badan";
-            desc = "BMI Anda antara 25.0 - 29.9. Berat badan Anda berada dalam kategori kelebihan berat badan."
-        } else {
-            kategoriBMI = "Kegemukan (obesitas)";
-            desc = "BMI Anda di atas 30.0. Berat badan Anda berada dalam kategori kegemukan."
-        }
-
-        document.getElementById('result-bmi').textContent= resultBMI;
-        document.getElementById('category').textContent= kategoriBMI;
-        document.getElementById('explanation').textContent= desc;
-        document.getElementById('result').textContent= 'block';
+  if ((genderMale || genderFemale) && age > 0 && weight > 0 && height > 0) {
+    e.preventDefault();
+    if (bmi < 18.5) {
+        document.getElementById("category").innerHTML = "Kekurangan Berat Badan";
+        document.getElementById("explanation").innerHTML = "BMI Anda kurang dari 18.5. Anda berada dalam kategori kekurangan berat badan.";
+    } else if (bmi >= 18.5 && bmi <= 24.9){
+        document.getElementById("category").innerHTML = "Normal (ideal)";
+        document.getElementById("explanation").innerHTML = "BMI Anda antara 18.5 - 24.9. Berat badan Anda berada dalam kategori normal.";
+    } else if (bmi >= 25.0 && bmi <= 29.9) {
+        document.getElementById("category").innerHTML = "Kelebihan Berat Badan";
+        document.getElementById("explanation").innerHTML =  "BMI Anda antara 25.0 - 29.9. Berat badan Anda berada dalam kategori kelebihan berat badan.";
     } else {
-        alert("Mohon untuk melengkapi semua data");
+        document.getElementById("category").innerHTML = "Kegemukan (obesitas)";
+        document.getElementById("explanation").innerHTML = "BMI Anda di atas 30.0. Berat badan Anda berada dalam kategori kegemukan.";
     }
+  } else {
+        document.getElementById("resultBMI").innerHTML = "";
+        document.getElementById("category").innerHTML = "";
+        document.getElementById("explanation").innerHTML = "";
+  }
 }
-
-function resetForm() {
-    document.getElementById('bmi-form').reset();
-    document.getElementById ('result').style.display= 'none';
-    document.getElementById('result-bmi').textContent= '';
-    document.getElementById('category').textContent= '';
-    document.getElementById('explanation').textContent= '';
-
-}
-

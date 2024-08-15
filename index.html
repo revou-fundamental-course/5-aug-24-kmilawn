@@ -27,7 +27,7 @@
             </div>
 
             <div>
-                <label for="weight"><h3>Weight</h3></label>
+                <label for="weight"><h3>Weight (Kg)</h3></label>
                 <input type="number" id="weight">
             </div>
 
@@ -37,14 +37,12 @@
             </div>
 
             <div>
-                <label for="height"><h3>Height</h3></label>
+                <label for="height"><h3>Height (Cm)</h3></label>
                 <input type="number" id="height">
             </div>
 
-            <div class="form-btn-container">
-                <button class="button bg-hitung"  type="button" onclick="formValidate()">Calculate</button>
-                <button class="button bg-reset" type="button" onclick="resetForm()">Reset</button>
-            </div>
+                <button class="button bg-hitung" id="submit" type="submit" onclick="formValidate()">Calculate</button>
+                <button class="button bg-reset" type="reset" onclick="resetForm()">Reset</button>
         </form>
 
         <article>
