@@ -19,16 +19,16 @@ function formValidate() {
             desc = "BMI Anda antara 18.5 - 24.9. Berat badan Anda berada dalam kategori normal."
         } else if (bmi >= 25.0 && bmi <= 29.9){
             kategoriBMI = "Kelebihan Berat Badan";
-            desc = "BMIAnda antara 25.0 - 29.9. Berat badan Anda berada dalam kategori kelebihan berat badan."
+            desc = "BMI Anda antara 25.0 - 29.9. Berat badan Anda berada dalam kategori kelebihan berat badan."
         } else {
             kategoriBMI = "Kegemukan (obesitas)";
             desc = "BMI Anda di atas 30.0. Berat badan Anda berada dalam kategori kegemukan."
         }
 
-        document.getElementById('result-bmi').textContent = resultBMI;
-        document.getElementById('category').textContent = kategoriBMI;
-        document.getElementById('explanation').textContent = desc;
-        document.getElementById('result').textContent = 'block';
+        document.getElementById('result-bmi').textContent= resultBMI;
+        document.getElementById('category').textContent= kategoriBMI;
+        document.getElementById('explanation').textContent= desc;
+        document.getElementById('result').textContent= 'block';
     } else {
         alert("Mohon untuk melengkapi semua data");
     }
@@ -36,10 +36,10 @@ function formValidate() {
 
 function resetForm() {
     document.getElementById('bmi-form').reset();
-    document.getElementById ('result').style.display = 'none';
-    document.getElementById('result-bmi').textContent = '';
-    document.getElementById('category').textContent = '';
-    document.getElementById('explanation').textContent = '';
+    document.getElementById ('result').style.display= 'none';
+    document.getElementById('result-bmi').textContent= '';
+    document.getElementById('category').textContent= '';
+    document.getElementById('explanation').textContent= '';
 
 }
 

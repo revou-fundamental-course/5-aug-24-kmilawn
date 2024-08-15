@@ -8,9 +8,14 @@ main {
     display: flex;
 }
 
+body {
+    background-color: rgb(214, 235, 235);
+}
+
 form {
     padding: 12px;
     background-color: rgb(208, 219, 221);
+    border-radius: 4px;
 }
 
 aside {
@@ -61,6 +66,7 @@ p {
 .dss-cnslt {
     background-color: rgb(208, 219, 221);
     padding: 10px;
+    border-radius: 4px;
 }
 
 .bttn {
